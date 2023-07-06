@@ -121,10 +121,15 @@
                                     <constraint firstAttribute="width" secondItem="b2G-aW-c90" secondAttribute="height" multiplier="1:1" id="4qP-Pl-EDo"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-yi-6kx">
-                                <rect key="frame" x="175" y="59" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ts-yi-6kx">
+                                <rect key="frame" x="174.66666666666666" y="58.999999999999993" width="44" height="27.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlF-pT-BzQ">
+                                <rect key="frame" x="185.66666666666666" y="103.33333333333333" width="22" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -132,15 +137,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0ts-yi-6kx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CFL-3q-Fue"/>
+                            <constraint firstItem="0ts-yi-6kx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Lo4-49-TNH"/>
                             <constraint firstItem="b2G-aW-c90" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="QcR-ot-RbH"/>
+                            <constraint firstItem="LlF-pT-BzQ" firstAttribute="top" secondItem="0ts-yi-6kx" secondAttribute="bottom" constant="16.666666666666657" id="Zg2-dl-P4P"/>
                             <constraint firstItem="b2G-aW-c90" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cFk-hQ-pla"/>
                             <constraint firstItem="b2G-aW-c90" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eJe-hF-lbO"/>
+                            <constraint firstItem="LlF-pT-BzQ" firstAttribute="centerX" secondItem="0ts-yi-6kx" secondAttribute="centerX" id="gzw-e5-5WU"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="-2"/>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
