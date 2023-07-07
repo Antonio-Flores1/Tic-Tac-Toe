@@ -46,8 +46,16 @@ class ViewController: UIViewController {
 
     @IBAction func boardTapAction(_ sender: UIButton) {
         addToBoard(sender)
+        
+        if victoryCheck(cross){
+            
+        } else {
+            victoryCheck(naught)
+        }
+            
         if boardFull() {
          resultAlert(title: "Draw")
+            
         } else {
             
         }
@@ -65,6 +73,57 @@ class ViewController: UIViewController {
     func initBoard(){
         
     }
+    
+    func victoryCheck(_ buttonSymbol: String) -> Bool {
+       
+        if buttonSymbolCheck(a1, buttonSymbol) && buttonSymbolCheck(a2, buttonSymbol) && buttonSymbolCheck(a3, buttonSymbol) {
+            return true
+        }
+        if buttonSymbolCheck(b1, buttonSymbol) && buttonSymbolCheck(b2, buttonSymbol) && buttonSymbolCheck(b3, buttonSymbol) {
+            return true
+        }
+        if buttonSymbolCheck(c1, buttonSymbol) && buttonSymbolCheck(c2, buttonSymbol) && buttonSymbolCheck(c3, buttonSymbol) {
+            return true
+        }
+    
+        if buttonSymbolCheck(a1, buttonSymbol) && buttonSymbolCheck(b1, buttonSymbol) && buttonSymbolCheck(c1, buttonSymbol) {
+            return true
+        }
+        if buttonSymbolCheck(a2, buttonSymbol) && buttonSymbolCheck(b2, buttonSymbol) && buttonSymbolCheck(c2, buttonSymbol) {
+            return true
+        }
+        if buttonSymbolCheck(a3, buttonSymbol) && buttonSymbolCheck(b3, buttonSymbol) && buttonSymbolCheck(c3, buttonSymbol) {
+            return true
+        }
+        
+        if buttonSymbolCheck(a1, buttonSymbol) && buttonSymbolCheck(b2, buttonSymbol) && buttonSymbolCheck(c3, buttonSymbol) {
+            return true
+        }
+        if buttonSymbolCheck(a3, buttonSymbol) && buttonSymbolCheck(b2, buttonSymbol) && buttonSymbolCheck(c1, buttonSymbol) {
+            return true
+        }
+        return false
+    }
+    
+//    func checkDiagnolVictories(_ symbol: String) -> Bool{
+//
+//        }
+//
+//        return false
+//    }
+    
+    
+//    func checkHorizontalVictories(_ symbol: String) -> Bool{
+//
+//        return false
+//    }
+    
+    
+    func buttonSymbolCheck(_ button: UIButton, _ symbol: String) -> Bool {
+        return button.title(for: .normal) == symbol
+    }
+    
+    
     
     func boardFull() -> Bool {
         for button in buttonBoard {
