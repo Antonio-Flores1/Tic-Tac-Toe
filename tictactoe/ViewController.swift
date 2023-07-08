@@ -17,10 +17,8 @@ class ViewController: UIViewController {
     var firstTurn = Turn.Cross
     var currentTurn = Turn.Cross
     
-    
     var naught = "O"
     var cross  = "X"
-    
     
     
     @IBOutlet weak var turnLabel: UILabel!
@@ -40,24 +38,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        initBoard()
         buttonBoard = [a1,a2,a3,b1,b2,b3,c1,c2,c3]
     }
 
     @IBAction func boardTapAction(_ sender: UIButton) {
+         
         addToBoard(sender)
-        
+
         if victoryCheck(cross){
-            
-        } else {
-            victoryCheck(naught)
+            resultAlert(title: "X Wins")
+
+        } else if victoryCheck(naught) {
+            resultAlert(title: "O Wins")
         }
             
         if boardFull() {
          resultAlert(title: "Draw")
-            
-        } else {
-            
         }
     }
     
@@ -69,10 +65,7 @@ class ViewController: UIViewController {
         }))
         self.present(ac, animated: true)
     }
-    
-    func initBoard(){
-        
-    }
+ 
     
     func victoryCheck(_ buttonSymbol: String) -> Bool {
        
@@ -105,19 +98,6 @@ class ViewController: UIViewController {
         return false
     }
     
-//    func checkDiagnolVictories(_ symbol: String) -> Bool{
-//
-//        }
-//
-//        return false
-//    }
-    
-    
-//    func checkHorizontalVictories(_ symbol: String) -> Bool{
-//
-//        return false
-//    }
-    
     
     func buttonSymbolCheck(_ button: UIButton, _ symbol: String) -> Bool {
         return button.title(for: .normal) == symbol
@@ -146,7 +126,7 @@ class ViewController: UIViewController {
             firstTurn = Turn.Naught
             turnLabel.text = naught
          }
-        currentTurn = firstTurn
+            currentTurn = firstTurn
     }
     
     func addToBoard(_ sender: UIButton) {
@@ -161,11 +141,8 @@ class ViewController: UIViewController {
                 currentTurn = Turn.Naught
                 turnLabel.text = naught
             }
-            sender.isEnabled = false
+                sender.isEnabled = false
         }
-//
     }
-    
-    
 }
 
