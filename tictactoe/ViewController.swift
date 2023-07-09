@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     var naught = "O"
     var cross  = "X"
     
+    var crossScore = 0
+    var noughtScore = 0
+    
     
     @IBOutlet weak var turnLabel: UILabel!
     
@@ -46,9 +49,11 @@ class ViewController: UIViewController {
         addToBoard(sender)
 
         if victoryCheck(cross){
+            crossScore += 1
             resultAlert(title: "X Wins")
 
         } else if victoryCheck(naught) {
+            noughtScore += 1
             resultAlert(title: "O Wins")
         }
             
@@ -59,7 +64,8 @@ class ViewController: UIViewController {
     
     
     func resultAlert(title:String) {
-        let ac = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        let message = "\n X's Score \(crossScore) \n\n O's score \(noughtScore)"
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in
             self.resetBoard()
         }))
